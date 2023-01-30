@@ -6,8 +6,15 @@
 
 a{
 	text-decoration: none;
+	color: #333;
 }
 
-li{
-	list-style: none;
-}
+.global-header{ display: flex; justify-content: center; margin: 40px 0;}
+
+.logo img{width:240px;}
+
+.join-box-list{max-width: 468px; margin: 0 auto;}
+
+.join-box-item{margin-bottom: 30px;}
+
+.inputbox{display: flex; align-items: center; height: 52px; background-color: #fff; border: 1px solid #dadada; margin-top: 10px; padding: 10px 12px; cursor:pointer; }
