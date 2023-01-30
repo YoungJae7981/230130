@@ -68,20 +68,22 @@ $("#userpw input").focusout(function(){
 			$("#userpw-chk .warn").html('<span class="text-green">동일한 비밀번호입니다.</span>');
 		}
 	})
+	//이름
+	//#user name input에서 focusout될 때
 
 	$("#username input").focusout(function(){
-		let username =$(this).val();
-		
-		$("#username .warn").html('<span class="text-red">필수 정보입니다.</span>');
-		
-	})
-
-	$("#birth .inputbox").focusout(function(){
-		let birth =$(this).val();
-		if(birth.length == 0){
-			$("#userpw-chk .warn").html('<span class="text-red">필수 정보입니다.</span>');
+		let username = $("#username input").val();
+		nameveri = false;
+		// JS 정규 표현식 입력값을 체크
+		// 형식: /정규식/
+		// 문자와 숫자가 아닌것
+		let reg = /[^ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9]/g;
+		if (username.length == 0){
+			$("#username .warn").html('<span class="text-red">필수 정보다.</span>');
 		}
 	})
+
+
 
 
 
