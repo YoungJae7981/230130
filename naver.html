@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 	<meta charset="UTF-8">
@@ -17,6 +17,87 @@
 				<img src="./images/logo.png" alt="네이버-로고">
 			</h1>
 		</header>
+
+		<section class="join-box-list">
+			<form id="join-from" action="./submit.html">
+				<div class="join-box-item" id="userid">
+					<label for="">
+						<p>아이디</p>
+						<div class="inputbox">
+							<input type="text" name="userid">
+							<div>@naver.com</div>
+						</div>
+					</label>
+					<p class="warn"></p>
+				</div>
+				<div class="join-box-item" id="userpw">
+					<label for="">
+						<p>비밀번호</p>
+						<div class="inputbox">
+							<input type="password" name="userpw">
+							<div>
+								<p></p>
+								<img src="./images/m_icon_pw_step_01.png" alt="비밀번호 아이콘">
+							</div>
+						</div>
+					</label>
+					<p class="warn"></p>
+				</div>
+				<div class="join-box-item" id="userpw-chk">
+					<label for="">
+						<p>비밀번호 재확인</p>
+						<div class="inputbox">
+							<input type="password" name="userpw">
+							<div>
+								<img src="./images/m_icon_pw_step_02.png" alt="비밀번호 아이콘2">
+							</div>
+						</div>
+					</label>
+					<p class="warn"></p>
+				</div>
+				<div class="join-box-item" id="username">
+					<label for="">
+						<p>이름</p>
+						<div class="inputbox">
+							<input type="text" name="username">
+						</div>
+					</label>
+					<p class="warn"></p>
+				</div>
+				<div class="join-box-item" id="birth">
+					<label for="">
+						<p>생년월일</p>
+						<div class="three-box">
+							<div class="inputbox">
+								<input type="text" name="birth" id="year" maxlength="4" placeholder="년(4자)">
+
+							</div>
+							<div class="inputbox">
+								<select name="month" id="month">
+									<option value="">월</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+							</div>
+							<div class="inputbox">
+								<input type="text" id="date" name="date" maxlength="2" placeholder="일">
+							</div>
+						</div>
+					</label>
+					<p class="warn"></p>
+				</div>
+			</form>
+		</section>
 	</div>
 	<script src="./js/script.js"></script>
 </body>
