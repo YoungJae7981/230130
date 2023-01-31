@@ -147,6 +147,12 @@ a {
   color: #08A600;
 }
 
+.text-black{
+  color:#000;
+  font-weight: bold;
+  font-size: 500px;
+}
+
 .warn {
   margin: 15px 0;
 }

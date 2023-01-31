@@ -89,6 +89,54 @@ $("#userpw input").focusout(function(){
 		}
 	})
 
+	// 생년월일
+	// #year , #month, #date에서 focusout될때 (실행할함수)
+	// #year , value length가 숫자 4가 아니라면 (조건1) (O)
+	// month
+	// #birth .warn 빨간 글씨로 "태어난 년도 4자리를 정확하게 입력하세요"
+	
+	$("#year, #month , #date").focusout(function(){
+		let year =$("#year").val();
+		let month =$("#month").val();
+		let date =$("#date").val();
+
+		// 현재 날짜 및 시간
+		let now = new Date();
+		console.log(now);
+		//Date 객체의 getTime()매서드 1970년 1월 1일 00시 00분 00초 UTC(세계 표준시를 기준으로 경과한 밀리초(trnaslate(ms))를 반환함)
+		let nowstamp = now.getTime();
+		//현재 날짜 및 시간에서 현재 연도의 네 자리값을 변수에 할당
+		now  = now.getFullYear();
+		console.log(now);
+
+		let birth = new Date(year, month , date); 
+		birth =  birth.getTime(); 
+		birthveri = false;
+		
+		if(year.length!=4){
+			$("#birth .warn").html('<span class="text-red">태어난 년도를 정확히 입력해라</span>');
+		} else if(month.length ==0){
+			$("#birth .warn").html('<span class="text-red">태어난 월을 정확히 입력해라</span>');
+		} else if(date.length ==0){
+			$("#birth .warn").html('<span class="text-red">태어난 일을 정확히 입력해라</span>');
+		} else if(isNaN(year,month,date)){
+			$("#birth .warn").html('<span class="text-red">생년월일을 다시한번 확인해라</span>');
+		} else if(now -year >100){
+			$("#birth .warn").html('<span class="text-green">ㄹㅇ?</span>');
+		} else if(now -year ==27 ){
+			$("#birth .warn").html('<span class="text-green">동갑인데요</span>');
+		} else if(nowstamp <birth){
+			$("#birth .warn").html('<span class="text-black">구라좀 치지마</span>');
+		}else{
+			birthveri = false;
+			$("#birth .warn").empty();
+		}
+	})
+		
+		
+		
+	
+
 
 
 
